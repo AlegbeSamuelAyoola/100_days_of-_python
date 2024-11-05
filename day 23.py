@@ -6,7 +6,7 @@ def login():
             print("Login successful")
             break
         else:
-            print("Login unsuccessful")
+            print("Login unsuccessful, try again")
         continue
 
 print("====== BEERUS LOGIN SYSTEM ======")
