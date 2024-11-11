@@ -68,7 +68,7 @@ while True:
         roll1 = battle_die_roll()
         roll2 = battle_die_roll()
         if roll1 < roll2:
-            damage = ((str2 - str1) + (1))
+            damage = abs(str2 - str1) + 1
             hp1 -= damage
             print(name1,"Rolls",roll1)
             print(name2,"Rolls",roll2)
@@ -86,7 +86,7 @@ while True:
             time.sleep(3)
             os.system('cls')
         elif roll2 < roll1:
-            damage = ((str1 - str2) + (1) )
+            damage = abs(str1 - str2) + 1
             hp2 -= damage
             print(name1,"Rolls",roll1)
             print(name2,"Rolls",roll2)
