@@ -15,3 +15,6 @@ print(f"{title}".center(170))
 print()
 print(f"{greet()}".center(170))
 print()
+
+1 = input("name")
+
