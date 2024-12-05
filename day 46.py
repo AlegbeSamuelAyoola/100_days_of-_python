@@ -5,7 +5,7 @@ def prettyprint():
     for key, value in beastbook.items():
         print(key, end=" | ")
         for subkey, subvalue in value.items():
-            print(subkey, end=": ")
+            print(subkey, end=": ")  
             print(subvalue, end=" | ")
         print()
 
