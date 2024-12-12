@@ -1,0 +1,3 @@
+samuel| pepperoni| L| 4| 23.96
+mike| pineappla| M| 2| 11.98
+john| none| S| 1| 5.99
