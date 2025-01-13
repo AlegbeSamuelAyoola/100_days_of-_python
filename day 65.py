@@ -24,7 +24,7 @@ class Enemy(Character):
     def __init__(self, name, health, magic_points, enemy_type, strength):
         super().__init__(name, health, magic_points)
         self.enemy_type = enemy_type
-        self.strength = strength
+        self.strength = strength 
 
     def output_data(self):
         return super().output_data() + f"Type: {self.enemy_type}\nStrength: {self.strength}\n"
