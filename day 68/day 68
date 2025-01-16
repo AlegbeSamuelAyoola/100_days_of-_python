@@ -1,0 +1,98 @@
+import tkinter as tk
+from tkinter import messagebox
+from PIL import Image, ImageTk
+import random
+import os
+
+def display_random_image():
+    global displayed_image_name
+
+    available_names = list(image_names.keys())
+    if len(available_names) == 1:
+        displayed_image_name = available_names[0]
+    else:
+        prev_image_name = displayed_image_name
+        while displayed_image_name == prev_image_name:
+            displayed_image_name = random.choice(available_names)
+
+    img_path = os.path.join(folder_path, image_names[displayed_image_name])
+    print(f"Displaying image for: {displayed_image_name}")  # Debug: Show selected name
+
+    if not os.path.isfile(img_path):
+        print(f"File not found: {img_path}")
+        image_label.config(text="Image not found.", image='')
+        image_label.image = None
+    else:
+        image_label.config(text="Guess the name!", image='')
+        image_label.image = None
+
+def submit_guess():
+    global displayed_image_name
+    name = entry.get().strip().lower()
+    print(f"User input: '{name}'")  # Debug: Show user input
+    print(f"Displayed image name: '{displayed_image_name}'")  # Debug: Show correct answer
+
+    if name == displayed_image_name:
+        img_path = os.path.join(folder_path, image_names[displayed_image_name])
+        print(f"Correct guess! Loading image: {img_path}")  # Debug: Show correct image path
+
+        if os.path.isfile(img_path):
+            image = Image.open(img_path)
+            image.thumbnail((300, 300))
+            photo = ImageTk.PhotoImage(image)
+            image_label.config(image=photo, text='')
+            image_label.image = photo
+            result_label.config(text="Correct!")
+            root.after(2000, display_random_image)
+        else:
+            print(f"File not found (after correct guess): {img_path}")
+            image_label.config(text="Image not found.", image='')
+            image_label.image = None
+    else:
+        print("Incorrect guess!")  # Debug: Log incorrect guess
+        result_label.config(text="Incorrect, try again!")
+
+root = tk.Tk()
+root.title("Guess Who")
+
+entry = tk.Entry(root)
+entry.pack()
+
+submit_btn = tk.Button(root, text="Submit Guess", command=submit_guess)
+submit_btn.pack()
+
+image_label = tk.Label(root, text="Guess the name!")
+image_label.pack()
+
+result_label = tk.Label(root)
+result_label.pack()
+
+# Specify the absolute folder path where your images are stored
+folder_path = r"C:\Users\LEOVO\Documents\GitHub\100_days_of-_python\day 68"
+print(f"Folder path is: {folder_path}")
+
+image_names = {
+    "charlotte": "charlotte.png",
+    "gerald": "gerald.png",
+    "kate": "kate.png",
+    "mo": "mo.png",
+}
+
+# Check if all images exist
+missing_files = []
+for name, file in image_names.items():
+    img_path = os.path.join(folder_path, file)
+    if not os.path.isfile(img_path):
+        missing_files.append(name)
+        print(f"Missing file: {img_path}")  # Debug: Show missing file path
+
+if missing_files:
+    missing_message = f"Missing images: {', '.join(missing_files)}"
+    print(missing_message)
+    messagebox.showerror("Error", missing_message)
+    root.destroy()
+else:
+    displayed_image_name = None
+    display_random_image()
+
+root.mainloop()
