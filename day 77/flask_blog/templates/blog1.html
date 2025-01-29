@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}The Joys of Gardening{% endblock %}
+
+{% block content %}
+<article>
+    <h2>The Joys of Gardening</h2>
+    <p><em>January 1, 2025</em></p>
+    <img src="{{ url_for('static', filename='images/gardening.png') }}" alt="Gardening" class="blog-image">
+    <p>Gardening has always been a passion of mine. There's something incredibly satisfying about planting a seed and watching it grow into a beautiful plant. In this blog entry, I'll share some tips and tricks for starting your own garden, regardless of the space you have available.</p>
+    <h3>Getting Started</h3>
+    <p>First, you'll need to choose the right plants for your climate and soil type. If you're unsure, consult your local nursery or gardening center. They'll be able to provide valuable advice on what will thrive in your area.</p>
+    <h3>Maintaining Your Garden</h3>
+    <p>Once your plants are in the ground, it's important to keep them well-watered and free from pests. Regular weeding and fertilizing can also help your garden flourish. Remember, gardening is a learning process, so don't be afraid to experiment and see what works best for you.</p>
+</article>
+{% endblock %}
