@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ heading }}</h1>
+            <p>{{ date }}</p>
+        </header>
+        <div class="content">
+            <p>{{ text }}</p>
+        </div>
+        <nav>
+            <a href="{{ url_for('blog1') }}">Blog 1</a> | <a href="{{ url_for('blog2') }}">Blog 2</a>
+        </nav>
+    </div>
+</body>
+</html>
