@@ -19,22 +19,16 @@ def theme1():
 
     if lang == 'fr':
         message = 'Bonjour, et bienvenue sur notre merveilleux site web! (Thème 1)'
-        theme = """
-        <style>
-            body { background-color: pink; color: purple; }
-            h1 { font-family: Arial, sans-serif; }
-        </style>
-        <h1>{{ message }}</h1>
-        """
     else:
         message = 'Hello, and welcome to our wonderful website! (Theme 1)'
-        theme = """
-        <style>
-            body { background-color: lightblue; color: darkblue; }
-            h1 { font-family: Arial, sans-serif; }
-        </style>
-        <h1>{{ message }}</h1>
-        """
+
+    theme = """
+    <style>
+        body { background-color: lightblue; color: darkblue; }
+        h1 { font-family: Arial, sans-serif; }
+    </style>
+    <h1>{{ message }}</h1>
+    """
 
     return render_template_string(theme, message=message)
 
@@ -44,22 +38,16 @@ def theme2():
 
     if lang == 'fr':
         message = 'Bonjour, et bienvenue sur notre merveilleux site web! (Thème 2)'
-        theme = """
-        <style>
-            body { background-color: lightyellow; color: darkred; }
-            h1 { font-family: Verdana, sans-serif; }
-        </style>
-        <h1>{{ message }}</h1>
-        """
     else:
         message = 'Hello, and welcome to our wonderful website! (Theme 2)'
-        theme = """
-        <style>
-            body { background-color: lightgreen; color: darkgreen; }
-            h1 { font-family: Verdana, sans-serif; }
-        </style>
-        <h1>{{ message }}</h1>
-        """
+
+    theme = """
+    <style>
+        body { background-color: lightgreen; color: darkgreen; }
+        h1 { font-family: Verdana, sans-serif; }
+    </style>
+    <h1>{{ message }}</h1>
+    """
 
     return render_template_string(theme, message=message)
 
