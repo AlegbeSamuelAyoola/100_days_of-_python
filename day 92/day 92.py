@@ -8,7 +8,7 @@ LATITUDE = '6.6156'
 LONGITUDE = '3.3334'
 LOCATION_NAME = 'Lagos, Nigeria'
 
-HTML_TEMPLATE = """
+HTML_TEMPLATE = """"
 <!DOCTYPE html>
 <html lang="en">
 <head>
