@@ -14,7 +14,7 @@ EMAIL_SENDER = os.getenv("EMAIL_SENDER")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")
 
-# Define your products on AliExpress with sample URLs and your target prices.
+
 PRODUCTS = [
     {
         "name": "Sample Product 1",
